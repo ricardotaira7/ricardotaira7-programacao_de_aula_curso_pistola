@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programação de Aula — Curso Operador de Pistola Básico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#080808;--bg2:#0e0e0e;--bg3:#151515;--gold:#c9a84c;--gold-dk:#8a6f2e;--gold-lt:#e8c96a;--red:#b22222;--green:#2e7d32;--white:#f0ede8;--gray:#8a8880;--gray-lt:#b0aca5;--line:rgba(201,168,76,.18);--r:6px;}
+a{color:var(--gold);text-decoration:none;}
+body{background:var(--bg);color:var(--white);font-family:'Barlow',sans-serif;font-size:18px;line-height:1.75;}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none;}
+main{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 20px 48px;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,9vw,3.6rem);color:var(--gold);letter-spacing:.06em;text-align:center;margin:40px 0 8px;line-height:1;}
+.subtitle{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:var(--gray);text-align:center;letter-spacing:.18em;text-transform:uppercase;margin-bottom:30px;}
+.sep{width:60px;height:2px;background:linear-gradient(90deg,var(--gold-dk),var(--gold),var(--gold-dk));margin:0 auto 32px;}
+.section{margin-bottom:36px;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold);letter-spacing:.06em;border-bottom:2px solid var(--line);padding-bottom:8px;margin-bottom:18px;}
+.time-block{background:var(--bg3);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin-bottom:16px;}
+.time-header{display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap;}
+.time-badge{background:var(--gold);color:var(--bg);font-family:'Bebas Neue',sans-serif;font-size:1.15rem;padding:6px 14px;border-radius:var(--r);white-space:nowrap;letter-spacing:.05em;}
+.time-title{font-family:'Barlow Condensed',sans-serif;font-size:1.35rem;font-weight:700;color:var(--white);letter-spacing:.04em;}
+.time-body{font-size:1.08rem;color:var(--gray-lt);line-height:1.75;}
+.time-body strong{color:var(--white);}
+.time-body p{margin-bottom:8px;}
+.item{display:flex;align-items:flex-start;gap:12px;margin-bottom:8px;font-size:1.08rem;color:var(--gray-lt);line-height:1.65;}
+.item::before{content:'•';color:var(--gold);font-weight:700;flex-shrink:0;font-size:1.2rem;line-height:1.4;}
+.info-box{background:rgba(201,168,76,.08);border-left:4px solid var(--gold);padding:14px 16px;border-radius:0 var(--r) var(--r) 0;margin:14px 0;font-size:1.05rem;color:var(--gold-lt);line-height:1.7;}
+.info-box strong{color:var(--gold);}
+.danger-box{background:rgba(178,34,34,.1);border-left:4px solid var(--red);padding:14px 16px;border-radius:0 var(--r) var(--r) 0;margin:14px 0;font-size:1.05rem;color:#e57373;line-height:1.7;}
+.danger-box strong{color:#ef5350;}
+.green-box{background:rgba(46,125,50,.08);border-left:4px solid var(--green);padding:14px 16px;border-radius:0 var(--r) var(--r) 0;margin:14px 0;font-size:1.05rem;color:#81c784;line-height:1.7;}
+.green-box strong{color:#66bb6a;}
+.team-card{background:var(--bg3);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin-bottom:12px;}
+.team-name{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;color:var(--gold);letter-spacing:.04em;margin-bottom:4px;}
+.team-role{font-size:1rem;color:var(--gray-lt);line-height:1.6;}
+.team-ig{display:inline-block;margin-top:6px;font-family:'Barlow Condensed',sans-serif;font-size:.98rem;color:var(--gold);font-weight:600;}
+.rule-line{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:1.05rem;}
+.rule-line:last-child{border-bottom:none;}
+.rule-num{flex-shrink:0;width:32px;height:32px;background:var(--gold);color:var(--bg);font-family:'Bebas Neue',sans-serif;font-size:1rem;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.rule-text{color:var(--gray-lt);line-height:1.65;flex:1;}
+.rule-text strong{color:var(--white);}
+.evac-step{background:var(--bg3);border:1px solid rgba(178,34,34,.2);border-radius:var(--r);padding:16px 18px;margin-bottom:12px;}
+.evac-step h4{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ef5350;margin-bottom:8px;}
+.evac-step p{font-size:1.05rem;color:var(--gray-lt);line-height:1.7;margin:0;}
+.evac-step strong{color:var(--white);}
+.evac-hosp{background:var(--bg3);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:12px;}
+.eh-badge{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.evac-hosp h4{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:8px;line-height:1.4;letter-spacing:.03em;}
+.eh-info{font-size:1rem;color:var(--gray-lt);line-height:1.6;margin-bottom:8px;}
+.evac-hosp a{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;}
+.evac-fones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px;}
+.evac-fone{background:var(--bg3);border:1px solid rgba(178,34,34,.2);border-radius:var(--r);padding:14px 8px;text-align:center;}
+.ef-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:#ef5350;line-height:1;margin-bottom:4px;}
+.ef-name{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.1em;color:var(--gray);text-transform:uppercase;}
+.footer{text-align:center;margin-top:36px;padding-top:24px;border-top:1px solid var(--line);font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:var(--gray);letter-spacing:.08em;line-height:1.8;}
+@media print{body{background:#fff;color:#000;} #bg{display:none;}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<main>
+
+<h1>Programação Operacional</h1>
+<p class="subtitle">Curso Operador de Pistola Básico</p>
+<div class="sep"></div>
+
+<div class="section">
+  <div class="section-title">Dados do Curso</div>
+  <div class="time-block">
+    <div class="item"><strong>Data:</strong>&nbsp; 21/06/2026 — Domingo</div>
+    <div class="item"><strong>Horário:</strong>&nbsp; 09h às 14h</div>
+    <div class="item"><strong>Duração:</strong>&nbsp; 6 horas</div>
+    <div class="item"><strong>Alunos:</strong>&nbsp; 15</div>
+    <div class="item"><strong>Divisão:</strong>&nbsp; 3 grupos de 5 alunos</div>
+    <div class="item"><strong>Local:</strong>&nbsp; Clube de Tiro Matsumoto — CTM</div>
+    <div class="item"><strong>Endereço:</strong>&nbsp; Núcleo Rural Vargem da Benção, Recanto das Emas, Brasília/DF</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Equipe de Instrução</div>
+  <div class="team-card">
+    <div class="team-name">RICARDO TAIRA — IAT</div>
+    <div class="team-role">Pós-graduado em Segurança da Informação<br>Instrutor de Armamento e Tiro</div>
+    <a href="https://instagram.com/ricardo_taira" target="_blank" class="team-ig">📸 @ricardo_taira</a>
+  </div>
+  <div class="team-card">
+    <div class="team-name">FLÁVIO BARRETTO — IAT</div>
+    <div class="team-role">Graduado em Segurança Pública<br>Ex-Força Aérea Brasileira<br>Instrutor de Armamento e Tiro</div>
+    <a href="https://www.instagram.com/barrettoflavio/" target="_blank" class="team-ig">📸 @barrettoflavio</a>
+  </div>
+  <div class="team-card">
+    <div class="team-name">JUDSON ALMEIDA — IAT</div>
+    <div class="team-role">Policial da ativa — Operações Especiais (BOPE)<br>Cursos de Sniper e PQD</div>
+    <a href="https://instagram.com/judsonskull51" target="_blank" class="team-ig">📸 @judsonskull51</a>
+  </div>
+  <div class="info-box"><strong>Formação em comum:</strong> Instrutor de Armamento e Tiro · Balística · APH (Atendimento Pré-Hospitalar)</div>
+  <div class="section-title" style="margin-top:24px;">Auxiliares</div>
+  <div class="team-card">
+    <div class="team-name">Sávio Araújo · Fábio Reis · Adilson Barbosa</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">48 Horas Antes do Curso</div>
+  <div class="time-block">
+    <div class="time-body">
+      <p><strong>Conferência completa de:</strong></p>
+      <div class="item">Quantidade de munições</div>
+      <div class="item">Armas e carregadores</div>
+      <div class="item">EPIs (abafadores e óculos)</div>
+      <div class="item">Alvos e obreias</div>
+      <div class="item">Certificados</div>
+      <div class="item">Kits de limpeza e ferramentas</div>
+      <div class="item">Água da equipe</div>
+      <div class="item">Impressões e listas de presença</div>
+    </div>
+    <div class="green-box"><strong>Objetivo:</strong> Garantir que toda a operação esteja pronta antes do dia do curso.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Cronograma Operacional</div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">08:00</span><span class="time-title">Chegada da Equipe</span></div>
+    <div class="time-body">
+      <div class="item">Organização da pista e bancadas</div>
+      <div class="item">Separação dos armamentos</div>
+      <div class="item">Conferência de segurança das armas</div>
+      <div class="item">Separação das munições</div>
+      <div class="item">Organização dos alvos</div>
+      <div class="item">Separação dos EPIs</div>
+      <div class="item">Teste operacional da linha</div>
+      <div class="item">Revisão rápida do cronograma entre equipe</div>
+    </div>
+    <div class="danger-box"><strong>⚠️ Nenhuma arma deverá permanecer municiada antes do início da instrução.</strong></div>
+  </div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">09:00 — 09:30</span><span class="time-title">Recepção dos Alunos</span></div>
+    <div class="time-body">
+      <div class="item">Recepção e conferência dos nomes</div>
+      <div class="item">Entrega dos EPIs</div>
+      <div class="item">Apresentação do ambiente</div>
+      <div class="item">Orientação inicial</div>
+      <div class="item">Conversa informal entre os alunos</div>
+      <div class="item">Formação inicial dos grupos</div>
+    </div>
+    <div class="green-box"><strong>Objetivo:</strong> Deixar os alunos confortáveis antes do início operacional.</div>
+    <div class="danger-box"><strong>⚠️ 09:30 inicia pontualmente.</strong> Quem chegar atrasado perderá parte das instruções de segurança e entrará por último na fila prática.</div>
+  </div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">09:30 — 09:45</span><span class="time-title">Apresentação da Equipe</span></div>
+    <div class="time-body">
+      <p><strong>Flávio inicia a apresentação.</strong></p>
+      <div class="info-box"><strong>Fala inicial:</strong> "Bom dia, pessoal. Hoje ninguém precisa ter experiência. O objetivo aqui é aprender segurança, controle e fundamentos básicos do tiro de forma responsável."</div>
+      <div class="item">Apresentação dos instrutores e auxiliares</div>
+      <div class="item">Funcionamento do curso</div>
+      <div class="item">Dinâmica da pista</div>
+      <div class="item">Regras de disciplina</div>
+      <div class="info-box"><strong>Reforçar:</strong> "Qualquer dúvida, levantem a mão imediatamente. Aqui segurança vem antes de velocidade ou desempenho."</div>
+    </div>
+  </div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">09:45 — 10:05</span><span class="time-title">Regras do Estande e Segurança</span></div>
+    <div class="time-body">
+      <p><strong>Regras do Estande:</strong></p>
+      <div class="item">Uso obrigatório dos EPIs</div>
+      <div class="item">Não ultrapassar a linha de tiro</div>
+      <div class="item">Fotos somente ao final do curso</div>
+      <div class="item">Não tirar fotos segurando armas durante a instrução</div>
+      <div class="item">Respeitar os comandos da linha</div>
+      <div class="item">Não tocar em armamento sem autorização</div>
+      <p style="margin:18px 0 10px;"><strong>Regras de Segurança:</strong></p>
+      <div class="rule-line"><div class="rule-num">1</div><div class="rule-text"><strong>Toda arma deve ser tratada como carregada</strong></div></div>
+      <div class="rule-line"><div class="rule-num">2</div><div class="rule-text"><strong>Nunca apontar para algo que não queira destruir</strong> — arma sempre para o alvo ou direção segura (45° sul)</div></div>
+      <div class="rule-line"><div class="rule-num">3</div><div class="rule-text"><strong>Dedo sempre fora do gatilho</strong></div></div>
+      <div class="rule-line"><div class="rule-num">4</div><div class="rule-text"><strong>Saber o que existe atrás do alvo</strong></div></div>
+      <div class="rule-line"><div class="rule-num">5</div><div class="rule-text"><strong>Uso obrigatório de proteção auditiva e ocular</strong></div></div>
+      <div class="rule-line"><div class="rule-num">6</div><div class="rule-text"><strong>Nunca ultrapassar a linha de tiro</strong></div></div>
+      <div class="rule-line"><div class="rule-num">7</div><div class="rule-text"><strong>Nunca pegar a arma do colega</strong></div></div>
+      <div class="rule-line"><div class="rule-num">8</div><div class="rule-text"><strong>Em caso de dúvida:</strong> PARAR → LEVANTAR A MÃO → CHAMAR O INSTRUTOR</div></div>
+      <div class="info-box"><strong>Fala importante:</strong> "Não existe pergunta boba dentro da pista. O erro acontece quando o aluno fica com vergonha de perguntar."</div>
+    </div>
+  </div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">10:05 — 10:20</span><span class="time-title">Conhecimento da Arma</span></div>
+    <div class="time-body">
+      <div class="item">Apresentação das armas: Pistola 9mm e Espingarda calibre 12</div>
+      <div class="item">Diferença entre calibres</div>
+      <div class="item">Funcionamento básico</div>
+      <div class="item">Explicação breve sobre alma raiada</div>
+      <div class="item">Partes principais da pistola</div>
+      <div class="item">Funcionamento do carregador e do ferrolho</div>
+    </div>
+  </div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">10:20 — 10:35</span><span class="time-title">Fundamentos do Tiro</span></div>
+    <div class="time-body">
+      <div class="item">Postura (Isósceles e Weaver)</div>
+      <div class="item">Empunhadura</div>
+      <div class="item">Visada</div>
+      <div class="item">Respiração</div>
+      <div class="item">Acionamento do gatilho</div>
+      <div class="item">Controle do recuo</div>
+      <div class="item">Acompanhamento do disparo (follow-through)</div>
+    </div>
+    <div class="info-box"><strong>Fala importante:</strong> "O tiro acontece antes do disparo. A preparação correta influencia mais do que força."</div>
+  </div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">10:35 — 10:50</span><span class="time-title">Manuseio Básico e Panes</span></div>
+    <div class="time-body">
+      <p><strong>Manuseio:</strong></p>
+      <div class="item">Inserção da munição no carregador</div>
+      <div class="item">Inserção do carregador na arma</div>
+      <div class="item">Comandos: Carregar → Alimentar</div>
+      <p style="margin-top:14px;"><strong>Panes:</strong></p>
+      <div class="item">Pane de nega</div>
+      <div class="item">Pane de chaminé</div>
+      <div class="item">Pane de dupla alimentação</div>
+      <div class="item">Pane de extração</div>
+      <div class="item">Solução básica das panes</div>
+      <div class="item">Desmontagem de 1º escalão</div>
+    </div>
+    <div class="info-box"><strong>Reforçar:</strong> "Pane não significa defeito grave. O importante é manter a calma e seguir procedimento."</div>
+  </div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">10:50 — 11:05</span><span class="time-title">Revisão Geral</span></div>
+    <div class="time-body">
+      <div class="item">Revisão rápida de toda teoria</div>
+      <div class="item">Retirada de dúvidas</div>
+      <div class="item">Reforço das regras de segurança</div>
+      <div class="item">Explicação da dinâmica prática</div>
+    </div>
+    <div class="green-box"><strong>Objetivo:</strong> Garantir que todos os alunos estejam seguros antes de pegar no armamento.</div>
+  </div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">11:05 — 11:45</span><span class="time-title">Prática SEM Disparo</span></div>
+    <div class="time-body">
+      <p><strong>Separação em 3 grupos de 5 alunos. Cada grupo com 1 instrutor.</strong></p>
+      <div class="danger-box"><strong>⚠️ NÃO HAVERÁ DISPAROS NESTA ETAPA.</strong></div>
+      <p><strong>Dinâmica:</strong> 1 aluno por vez. Os outros 4 observam. Todos repetirão o procedimento.</p>
+      <p style="margin-top:10px;"><strong>Cada aluno realizará:</strong></p>
+      <div class="item">Desmontagem e montagem</div>
+      <div class="item">Municiamento do carregador</div>
+      <div class="item">Inserção do carregador</div>
+      <div class="item">Alimentação da arma</div>
+      <div class="item">Simulação de panes</div>
+      <div class="item">Correção de postura</div>
+      <div class="item">Correção de segurança</div>
+    </div>
+    <div class="green-box"><strong>Objetivo:</strong> Criar segurança operacional antes do disparo real. Troca de aluno somente após TODOS finalizarem.</div>
+  </div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">11:45 — 13:15</span><span class="time-title">Disparos Práticos</span></div>
+    <div class="time-body">
+      <p><strong>INÍCIO DOS DISPAROS REAIS</strong></p>
+      <p style="margin-top:10px;"><strong>Primeiros 10 disparos:</strong></p>
+      <div class="item"><strong>5 disparos livres</strong> — para o aluno conhecer o comportamento da arma naturalmente</div>
+      <div class="item"><strong>5 disparos com correção</strong> — postura, empunhadura, gatilho, visada, controle do recuo</div>
+      <p style="margin-top:14px;"><strong>Alvos:</strong></p>
+      <div class="item">Inicialmente será utilizada apenas obreia</div>
+      <div class="item">Não haverá troca completa do alvo nos primeiros disparos</div>
+      <p style="margin-top:14px;"><strong>Últimos 10 disparos:</strong></p>
+      <div class="item">Cada aluno receberá alvo individual identificado com nome</div>
+      <div class="item">Assinado pelos instrutores</div>
+      <div class="item">O aluno poderá levar o alvo para casa</div>
+      <p style="margin-top:14px;"><strong>Durante toda a prática:</strong></p>
+      <div class="item">Controle constante da linha</div>
+      <div class="item">Segurança máxima</div>
+      <div class="item">Correção individual</div>
+      <div class="item">Auxílio dos assistentes</div>
+    </div>
+  </div>
+
+  <div class="time-block" style="border-color:var(--gold-dk);background:linear-gradient(135deg,var(--bg3),#1a1500);">
+    <div class="time-header"><span class="time-badge" style="background:var(--gold-dk);color:var(--gold-lt);">BÔNUS</span><span class="time-title">Calibre 12 — Cortesia 🎁</span></div>
+    <div class="time-body">
+      <div class="item"><strong>3 disparos</strong> de calibre 12 por aluno (cortesia)</div>
+      <div class="item">Explicação rápida antes dos disparos</div>
+      <div class="item">Correção de postura devido ao recuo</div>
+    </div>
+    <div class="info-box"><strong>Fala importante:</strong> "A espingarda possui mais recuo. O segredo não é força, é postura e firmeza."</div>
+  </div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">13:15 — 13:40</span><span class="time-title">Organização Final e Feedback</span></div>
+    <div class="time-body">
+      <div class="item">Recolhimento das cápsulas</div>
+      <div class="item">Organização da pista</div>
+      <div class="item">Feedback geral</div>
+      <div class="item">Retirada de dúvidas</div>
+      <div class="item">Conversa sobre evolução</div>
+      <div class="item">Apresentação do curso intermediário</div>
+    </div>
+    <div class="green-box"><strong>Objetivo:</strong> Criar continuidade no treinamento do aluno.</div>
+  </div>
+
+  <div class="time-block">
+    <div class="time-header"><span class="time-badge">13:40 — 14:00</span><span class="time-title">Encerramento</span></div>
+    <div class="time-body">
+      <div class="item">Entrega dos certificados</div>
+      <div class="item">Fotos da turma</div>
+      <div class="item">Fotos individuais</div>
+      <div class="item">Fotos com armamentos</div>
+      <div class="item">Fotos com os alvos</div>
+      <div class="item">Encerramento operacional da equipe</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title" style="color:#ef5350;border-bottom-color:rgba(178,34,34,.3);">🚨 Plano de Evacuação — Acidente com Tiro</div>
+
+  <div class="evac-step">
+    <h4>Passo 1 — Cessar Fogo Imediato</h4>
+    <p><strong>"CESSAR FOGO!"</strong> — Comando imediato. Todos param de atirar. Dedo fora do gatilho, arma apontada para o alvo.</p>
+  </div>
+
+  <div class="evac-step">
+    <h4>Passo 2 — Evacuação dos Alunos</h4>
+    <p>Todos os alunos devem <strong>largar as armas na bancada</strong> e sair da pista imediatamente, dirigindo-se direto para a <strong>recepção do clube</strong>. Não correr, não tocar em nenhuma arma na saída.</p>
+  </div>
+
+  <div class="evac-step">
+    <h4>Passo 3 — Segurança das Armas</h4>
+    <p>Instrutores e auxiliares <strong>asseguram todas as armas</strong> na pista: descarregadas, ferrolho aberto, carregadores removidos. Nenhuma arma fica carregada.</p>
+  </div>
+
+  <div class="evac-step">
+    <h4>Passo 4 — Atendimento MARCH</h4>
+    <p>Protocolo de atendimento tático pré-hospitalar:</p>
+    <p style="margin-top:8px;">
+      <strong style="color:#ef5350;">M</strong> — Hemorragia Maciça (torniquete)<br>
+      <strong style="color:#ef5350;">A</strong> — Vias Aéreas<br>
+      <strong style="color:#ef5350;">R</strong> — Respiração<br>
+      <strong style="color:#ef5350;">C</strong> — Circulação<br>
+      <strong style="color:#ef5350;">H</strong> — Hipotermia
+    </p>
+  </div>
+
+  <div class="evac-step">
+    <h4>Passo 5 — Funções da Equipe</h4>
+    <p>
+      🩺 <strong>Socorrista Principal:</strong> Ricardo Taira (APH Tático)<br>
+      🚗 <strong>Motorista Principal:</strong> Flávio Barretto<br>
+      👮 <strong>Apoio Tático:</strong> Judson Almeida (BOPE)<br>
+      📞 <strong>Auxiliar:</strong> Ligar para os serviços de emergência
+    </p>
+  </div>
+
+  <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#ef5350;letter-spacing:.05em;margin:24px 0 14px;">Contatos de Emergência</h3>
+  <div class="evac-fones">
+    <div class="evac-fone"><div class="ef-num">192</div><div class="ef-name">SAMU</div></div>
+    <div class="evac-fone"><div class="ef-num">193</div><div class="ef-name">Bombeiros</div></div>
+    <div class="evac-fone"><div class="ef-num">190</div><div class="ef-name">Polícia</div></div>
+  </div>
+
+  <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#ef5350;letter-spacing:.05em;margin:24px 0 14px;">Hospitais de Referência</h3>
+
+  <div class="evac-hosp">
+    <div class="eh-badge">1ª Opção — 11 km · ~15 minutos</div>
+    <h4>Hospital Regional de Samambaia</h4>
+    <div class="eh-info">QS 614, Cj. C, Lote 01/02 — Samambaia, Brasília/DF<br>CEP 72322-583</div>
+    <a href="https://maps.app.goo.gl/bCS9KqNDYrKm35iW6" target="_blank">📍 Abrir rota no Google Maps →</a>
+  </div>
+
+  <div class="evac-hosp">
+    <div class="eh-badge">2ª Opção — 31 km · ~31 minutos</div>
+    <h4>Hospital de Base do Distrito Federal</h4>
+    <div class="eh-info">Setor Médico Hospitalar Sul, Área Especial, Quadra 101<br>Asa Sul, Brasília/DF — CEP 70330-150</div>
+    <a href="https://maps.app.goo.gl/B4cyrwtayK9ubndQA" target="_blank">📍 Abrir rota no Google Maps →</a>
+  </div>
+
+  <div class="green-box" style="margin-top:18px;">
+    <strong>✅ APH TÁTICO:</strong> Os instrutores Ricardo Taira, Flávio Barretto e Judson Almeida possuem formação em APH Tático com equipamentos de socorro (torniquete, curativo israelense, chest seal) disponíveis no local. O Clube de Tiro Matsumoto também conta com kit de primeiros socorros.
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Observações Importantes</div>
+  <div class="danger-box">
+    <strong>⚠️ Regras invioláveis:</strong><br>
+    • Segurança sempre será prioridade absoluta<br>
+    • Nenhum aluno manipulará arma sem autorização<br>
+    • Todos os comandos devem ser claros e repetidos<br>
+    • Assistentes devem observar comportamento e postura<br>
+    • Caso necessário, interromper imediatamente a linha de tiro<br>
+    • Nenhum instrutor deve deixar aluno sem supervisão
+  </div>
+</div>
+
+<div class="footer">
+  Ricardo Taira · Flávio Barretto · Judson Almeida<br>
+  Instrutores de Armamento e Tiro — IAT<br>
+  Formados pela Combat Tático — Escola credenciada pela PF<br>
+  © 2026
+</div>
+
+</main>
+
+<script>
+(function(){
+  const c=document.getElementById('bg'),ctx=c.getContext('2d');
+  let W,H,bs;
+  function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}
+  function mk(){return{x:Math.random()*W,y:Math.random()*H,rot:Math.random()*Math.PI*2,sp:.12+Math.random()*.18,rs:(Math.random()-.5)*.004,sc:.45+Math.random()*.55,al:.14+Math.random()*.10};}
+  function draw(b){
+    ctx.save();ctx.globalAlpha=b.al;ctx.translate(b.x,b.y);ctx.rotate(b.rot);ctx.scale(b.sc,b.sc);
+    ctx.beginPath();ctx.roundRect(-6,-18,12,32,[4]);ctx.fillStyle='#8B4513';ctx.fill();
+    ctx.beginPath();ctx.roundRect(-6,-18,5,32,[4,0,0,4]);ctx.fillStyle='rgba(255,255,255,.1)';ctx.fill();
+    ctx.beginPath();ctx.roundRect(-6,-18,12,7,[4,4,0,0]);ctx.fillStyle='#5a2a00';ctx.fill();
+    ctx.beginPath();ctx.roundRect(-7,12,14,6,[0,0,3,3]);ctx.fillStyle='#b8860b';ctx.fill();
+    ctx.beginPath();ctx.roundRect(-8,16,16,5,[0,0,4,4]);ctx.fillStyle='#909090';ctx.fill();
+    ctx.beginPath();ctx.arc(0,19,3,0,Math.PI*2);ctx.fillStyle='#c89820';ctx.fill();
+    ctx.restore();
+  }
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    bs.forEach(b=>{b.y+=b.sp;b.rot+=b.rs;if(b.y>H+28){b.y=-28;b.x=Math.random()*W;}draw(b);});
+    requestAnimationFrame(frame);
+  }
+  window.addEventListener('resize',resize);
+  resize();bs=Array.from({length:44},mk);frame();
+})();
+</script>
+
+</body>
+</html>
