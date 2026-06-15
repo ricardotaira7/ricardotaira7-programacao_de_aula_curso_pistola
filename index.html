@@ -55,6 +55,11 @@ h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,9vw,3.6rem);color:
 .evac-fone{background:var(--bg3);border:1px solid rgba(178,34,34,.2);border-radius:var(--r);padding:14px 8px;text-align:center;}
 .ef-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:#ef5350;line-height:1;margin-bottom:4px;}
 .ef-name{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.1em;color:var(--gray);text-transform:uppercase;}
+
+.hour-item{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.hour-item:last-child{border-bottom:none;}
+.hour-time{flex-shrink:0;background:var(--gold);color:var(--bg);font-family:'Bebas Neue',sans-serif;font-size:1rem;padding:4px 10px;border-radius:var(--r);min-width:128px;text-align:center;letter-spacing:.04em;}
+.hour-name{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;color:var(--white);letter-spacing:.02em;}
 .footer{text-align:center;margin-top:36px;padding-top:24px;border-top:1px solid var(--line);font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:var(--gray);letter-spacing:.08em;line-height:1.8;}
 @media print{body{background:#fff;color:#000;} #bg{display:none;}}
 </style>
@@ -104,21 +109,25 @@ h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,9vw,3.6rem);color:
   </div>
 </div>
 
+<!-- ══════ RESUMO DE HORÁRIOS ══════ -->
 <div class="section">
-  <div class="section-title">48 Horas Antes do Curso</div>
+  <div class="section-title">Resumo de Horários</div>
   <div class="time-block">
     <div class="time-body">
-      <p><strong>Conferência completa de:</strong></p>
-      <div class="item">Quantidade de munições</div>
-      <div class="item">Armas e carregadores</div>
-      <div class="item">EPIs (abafadores e óculos)</div>
-      <div class="item">Alvos e obreias</div>
-      <div class="item">Certificados</div>
-      <div class="item">Kits de limpeza e ferramentas</div>
-      <div class="item">Água da equipe</div>
-      <div class="item">Impressões e listas de presença</div>
+      <div class="hour-item"><span class="hour-time">08:00</span><span class="hour-name">Chegada da Equipe</span></div>
+      <div class="hour-item"><span class="hour-time">09:00 — 09:30</span><span class="hour-name">Recepção dos Alunos</span></div>
+      <div class="hour-item"><span class="hour-time">09:30 — 09:45</span><span class="hour-name">Apresentação da Equipe</span></div>
+      <div class="hour-item"><span class="hour-time">09:45 — 10:05</span><span class="hour-name">Regras do Estande e Segurança</span></div>
+      <div class="hour-item"><span class="hour-time">10:05 — 10:20</span><span class="hour-name">Conhecimento da Arma</span></div>
+      <div class="hour-item"><span class="hour-time">10:20 — 10:35</span><span class="hour-name">Fundamentos do Tiro</span></div>
+      <div class="hour-item"><span class="hour-time">10:35 — 10:50</span><span class="hour-name">Manuseio Básico e Panes</span></div>
+      <div class="hour-item"><span class="hour-time">10:50 — 11:05</span><span class="hour-name">Revisão Geral</span></div>
+      <div class="hour-item"><span class="hour-time">11:05 — 11:45</span><span class="hour-name">Prática SEM Disparo</span></div>
+      <div class="hour-item"><span class="hour-time">11:45 — 13:15</span><span class="hour-name">Disparos Práticos</span></div>
+      <div class="hour-item"><span class="hour-time">BÔNUS</span><span class="hour-name">Calibre 12 — Cortesia 🎁</span></div>
+      <div class="hour-item"><span class="hour-time">13:15 — 13:40</span><span class="hour-name">Organização Final e Feedback</span></div>
+      <div class="hour-item"><span class="hour-time">13:40 — 14:00</span><span class="hour-name">Encerramento</span></div>
     </div>
-    <div class="green-box"><strong>Objetivo:</strong> Garantir que toda a operação esteja pronta antes do dia do curso.</div>
   </div>
 </div>
 
@@ -128,48 +137,61 @@ h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,9vw,3.6rem);color:
   <div class="time-block">
     <div class="time-header"><span class="time-badge">08:00</span><span class="time-title">Chegada da Equipe</span></div>
     <div class="time-body">
-      <div class="item">Organização da pista e bancadas</div>
-      <div class="item">Separação dos armamentos</div>
-      <div class="item">Conferência de segurança das armas</div>
-      <div class="item">Separação das munições</div>
-      <div class="item">Organização dos alvos</div>
-      <div class="item">Separação dos EPIs</div>
-      <div class="item">Teste operacional da linha</div>
-      <div class="item">Revisão rápida do cronograma entre equipe</div>
+      <p><strong>Atividades de preparação operacional (1 hora antes da chegada dos alunos):</strong></p>
+      <div class="item">Organização da pista de tiro, bancadas e linha</div>
+      <div class="item">Separação dos armamentos (pistolas 9mm + espingarda cal.12)</div>
+      <div class="item">Conferência completa de segurança de cada arma — ferrolho aberto, câmara vazia, sem carregadores</div>
+      <div class="item">Separação das munições por calibre e por grupo</div>
+      <div class="item">Organização dos alvos (obreias para fase 1, alvos individuais identificados para fase 2)</div>
+      <div class="item">Separação dos EPIs (15 abafadores + 15 óculos + reservas)</div>
+      <div class="item">Teste operacional da linha de comunicação e sinalização</div>
+      <div class="item">Posicionamento do kit APH Tático em local de fácil acesso</div>
+      <div class="item">Revisão rápida do cronograma entre instrutores e auxiliares</div>
+      <div class="item">Distribuição das funções: Ricardo, Flávio e Judson cada um responsável por 1 grupo de 5</div>
     </div>
-    <div class="danger-box"><strong>⚠️ Nenhuma arma deverá permanecer municiada antes do início da instrução.</strong></div>
+    <div class="danger-box"><strong>⚠️ REGRA OPERACIONAL:</strong> Nenhuma arma deverá permanecer municiada antes do início da instrução. Todas com ferrolho aberto e separadas dos carregadores.</div>
+    <div class="info-box"><strong>Briefing da equipe:</strong> "Pessoal, hoje temos 15 alunos divididos em 3 grupos. Foco na segurança, paciência com quem nunca atirou, e atenção redobrada na linha de tiro. Qualquer dúvida ou intercorrência, comunicação imediata via rádio ou voz alta."</div>
   </div>
 
   <div class="time-block">
     <div class="time-header"><span class="time-badge">09:00 — 09:30</span><span class="time-title">Recepção dos Alunos</span></div>
     <div class="time-body">
-      <div class="item">Recepção e conferência dos nomes</div>
-      <div class="item">Entrega dos EPIs</div>
-      <div class="item">Apresentação do ambiente</div>
-      <div class="item">Orientação inicial</div>
-      <div class="item">Conversa informal entre os alunos</div>
-      <div class="item">Formação inicial dos grupos</div>
+      <p><strong>Responsáveis:</strong> Ricardo na recepção, Flávio orientando ambiente, Judson e auxiliares organizando EPIs.</p>
+      <div class="item">Recepção individual de cada aluno com cumprimento e identificação</div>
+      <div class="item">Conferência dos nomes na lista de presença e verificação de documento com foto</div>
+      <div class="item">Entrega dos EPIs (abafador + óculos) — testar encaixe e conforto antes da pista</div>
+      <div class="item">Apresentação do ambiente: banheiros, área de descanso, ponto de água, recepção</div>
+      <div class="item">Orientação inicial sobre fluxo: onde sentar, como será dividido em grupos</div>
+      <div class="item">Conversa informal entre os alunos para quebrar o gelo</div>
+      <div class="item">Formação inicial dos 3 grupos de 5 alunos (organização por afinidade ou aleatória)</div>
+      <div class="item">Distribuição de água gelada para todos</div>
     </div>
-    <div class="green-box"><strong>Objetivo:</strong> Deixar os alunos confortáveis antes do início operacional.</div>
-    <div class="danger-box"><strong>⚠️ 09:30 inicia pontualmente.</strong> Quem chegar atrasado perderá parte das instruções de segurança e entrará por último na fila prática.</div>
+    <div class="info-box"><strong>Fala de boas-vindas (Ricardo):</strong> "Bem-vindo ao Clube Matsumoto! Hoje o objetivo é vocês aprenderem com segurança e voltarem para casa com uma boa experiência. Fica tranquilo, ninguém aqui precisa ter experiência prévia — vamos passo a passo."</div>
+    <div class="green-box"><strong>Objetivo:</strong> Deixar os alunos confortáveis antes do início operacional. Aluno ansioso erra mais — aluno tranquilo aprende melhor.</div>
+    <div class="danger-box"><strong>⚠️ 09:30 inicia pontualmente.</strong> Quem chegar atrasado perderá parte das instruções de segurança e entrará por último na fila prática. Não há exceção — é por segurança.</div>
   </div>
 
   <div class="time-block">
     <div class="time-header"><span class="time-badge">09:30 — 09:45</span><span class="time-title">Apresentação da Equipe</span></div>
     <div class="time-body">
-      <p><strong>Flávio inicia a apresentação.</strong></p>
-      <div class="info-box"><strong>Fala inicial:</strong> "Bom dia, pessoal. Hoje ninguém precisa ter experiência. O objetivo aqui é aprender segurança, controle e fundamentos básicos do tiro de forma responsável."</div>
-      <div class="item">Apresentação dos instrutores e auxiliares</div>
-      <div class="item">Funcionamento do curso</div>
-      <div class="item">Dinâmica da pista</div>
-      <div class="item">Regras de disciplina</div>
-      <div class="info-box"><strong>Reforçar:</strong> "Qualquer dúvida, levantem a mão imediatamente. Aqui segurança vem antes de velocidade ou desempenho."</div>
+      <p><strong>Instrutor responsável:</strong> Flávio apresenta toda a equipe. Alunos sentados em formação de meia-lua.</p>
+      <div class="info-box"><strong>Fala inicial (Flávio):</strong> "Bom dia, pessoal! Sejam bem-vindos ao Curso de Operador de Pistola Básico. Hoje ninguém precisa ter experiência prévia — o objetivo aqui é aprender segurança, controle e fundamentos básicos do tiro de forma responsável. Não tem competição, não tem pressa, e ninguém vai te julgar por errar."</div>
+      <div class="item">Flávio apresenta cada instrutor da equipe (nome, formação, experiência)</div>
+      <div class="info-box"><strong>Apresentando Ricardo (Flávio):</strong> "Esse aqui é o Ricardo Taira, IAT formado pela Combat Tático, pós-graduado em Segurança da Informação. Ele vai ficar com o Grupo 1 hoje. Também é o nosso responsável pelo APH Tático — se algo acontecer, é com ele primeiro."</div>
+      <div class="info-box"><strong>Apresentando-se (Flávio):</strong> "Eu sou o Flávio Barretto, ex-Força Aérea Brasileira, graduado em Segurança Pública, também IAT pela Combat Tático. Vou estar com o Grupo 2. Qualquer dúvida durante o curso, podem me procurar."</div>
+      <div class="info-box"><strong>Apresentando Judson (Flávio):</strong> "E esse é o Judson Almeida, policial da ativa, Operações Especiais BOPE, com cursos de Sniper e PQD. Também IAT. Vai estar com o Grupo 3 — vão ter dica de pegada e postura que vale ouro."</div>
+      <div class="item">Flávio apresenta os auxiliares (Sávio Araújo, Fábio Reis, Adilson Barbosa) — papel de apoio na linha</div>
+      <div class="item">Explicação do funcionamento do curso: teoria → prática sem disparo → disparos reais → bônus cal.12</div>
+      <div class="item">Dinâmica da pista: 5 alunos por grupo, 1 atira enquanto outros observam</div>
+      <div class="item">Regras de disciplina: silêncio durante comandos, atenção redobrada na linha</div>
+      <div class="info-box"><strong>Reforçar (Flávio):</strong> "Qualquer dúvida, levantem a mão IMEDIATAMENTE. Aqui segurança vem antes de velocidade ou desempenho. Não tem pergunta boba. O erro é não perguntar."</div>
     </div>
   </div>
 
   <div class="time-block">
     <div class="time-header"><span class="time-badge">09:45 — 10:05</span><span class="time-title">Regras do Estande e Segurança</span></div>
     <div class="time-body">
+      <p><strong>Instrutor responsável:</strong> Ricardo conduz a apresentação das regras de segurança.</p>
       <p><strong>Regras do Estande:</strong></p>
       <div class="item">Uso obrigatório dos EPIs</div>
       <div class="item">Não ultrapassar a linha de tiro</div>
@@ -186,138 +208,194 @@ h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,9vw,3.6rem);color:
       <div class="rule-line"><div class="rule-num">6</div><div class="rule-text"><strong>Nunca ultrapassar a linha de tiro</strong></div></div>
       <div class="rule-line"><div class="rule-num">7</div><div class="rule-text"><strong>Nunca pegar a arma do colega</strong></div></div>
       <div class="rule-line"><div class="rule-num">8</div><div class="rule-text"><strong>Em caso de dúvida:</strong> PARAR → LEVANTAR A MÃO → CHAMAR O INSTRUTOR</div></div>
-      <div class="info-box"><strong>Fala importante:</strong> "Não existe pergunta boba dentro da pista. O erro acontece quando o aluno fica com vergonha de perguntar."</div>
+      <div class="info-box"><strong>Fala importante (Ricardo):</strong> "Não existe pergunta boba dentro da pista. O erro acontece quando o aluno fica com vergonha de perguntar. Levanta a mão sem medo — a gente está aqui para te ensinar."</div>
+      <div class="info-box"><strong>Reforço (Ricardo):</strong> "Essas 8 regras, se vocês gravarem só elas no curso de hoje, já valeu o dia. Tudo o que vamos ensinar depois é baseado nisso. Sem segurança, não tem tiro."</div>
     </div>
   </div>
 
   <div class="time-block">
     <div class="time-header"><span class="time-badge">10:05 — 10:20</span><span class="time-title">Conhecimento da Arma</span></div>
     <div class="time-body">
-      <div class="item">Apresentação das armas: Pistola 9mm e Espingarda calibre 12</div>
-      <div class="item">Diferença entre calibres</div>
-      <div class="item">Funcionamento básico</div>
-      <div class="item">Explicação breve sobre alma raiada</div>
-      <div class="item">Partes principais da pistola</div>
-      <div class="item">Funcionamento do carregador e do ferrolho</div>
+      <p><strong>Instrutor responsável:</strong> Judson apresenta as armas para todos os grupos. Experiência com armamento de operações especiais.</p>
+      <div class="item">Apresentação das armas: Pistola 9mm (a arma do curso) e Espingarda calibre 12 (bônus)</div>
+      <div class="item">Diferença entre calibres: o que muda do 9mm para o cal.12 (energia, recuo, aplicação)</div>
+      <div class="item">Funcionamento básico: como o tiro acontece (espoleta → pólvora → projétil)</div>
+      <div class="item">Explicação breve sobre alma raiada (raiamento) e por que o projétil gira</div>
+      <div class="item">Partes principais da pistola: cano, ferrolho, gatilho, carregador, retém do carregador, alça e massa de mira</div>
+      <div class="item">Funcionamento do carregador (mola interna) e do ferrolho (mola recuperadora)</div>
+      <div class="item">Demonstração visual com arma descarregada — alunos podem se aproximar para ver</div>
     </div>
+    <div class="info-box"><strong>Fala (Judson):</strong> "Galera, a arma não é nada de outro mundo. É uma máquina, com peças que funcionam juntas. Quanto mais vocês conhecerem, menos medo vocês vão ter, e mais respeito vão ganhar. Quem conhece a arma, respeita a arma."</div>
   </div>
 
   <div class="time-block">
     <div class="time-header"><span class="time-badge">10:20 — 10:35</span><span class="time-title">Fundamentos do Tiro</span></div>
     <div class="time-body">
-      <div class="item">Postura (Isósceles e Weaver)</div>
-      <div class="item">Empunhadura</div>
-      <div class="item">Visada</div>
-      <div class="item">Respiração</div>
-      <div class="item">Acionamento do gatilho</div>
-      <div class="item">Controle do recuo</div>
-      <div class="item">Acompanhamento do disparo (follow-through)</div>
+      <p><strong>Instrutor responsável:</strong> Ricardo apresenta os fundamentos. Demonstração com arma descarregada.</p>
+      <div class="item"><strong>Postura:</strong> Isósceles (pés paralelos, braços simétricos) e Weaver (pé escalonado, braço de apoio dobrado)</div>
+      <div class="item"><strong>Empunhadura:</strong> mão forte alta como aperto de mão, mão de apoio apertando MAIS, polegares paralelos para frente</div>
+      <div class="item"><strong>Visada:</strong> hierarquia de foco — foco na MASSA DE MIRA (não no alvo, não na alça)</div>
+      <div class="item"><strong>Respiração:</strong> dispara no final natural da expiração, sem prender o ar</div>
+      <div class="item"><strong>Acionamento do gatilho:</strong> dedo centralizado na polpinha, pressão suave e contínua para trás</div>
+      <div class="item"><strong>Controle do recuo:</strong> pegada firme, postura para frente, deixar a arma voltar sozinha</div>
+      <div class="item"><strong>Acompanhamento (follow-through):</strong> manter postura, mira e pegada após o tiro</div>
     </div>
-    <div class="info-box"><strong>Fala importante:</strong> "O tiro acontece antes do disparo. A preparação correta influencia mais do que força."</div>
+    <div class="info-box"><strong>Fala importante (Ricardo):</strong> "O tiro acontece ANTES do disparo. A preparação correta influencia muito mais do que força. Quem aplica os fundamentos acerta. Quem força, erra."</div>
+    <div class="info-box"><strong>Complemento (Ricardo):</strong> "Lembrem: pegada como aperto de mão na mão forte, e a mão de apoio aperta MAIS. Esse detalhe muda o tiro de vocês completamente."</div>
   </div>
 
   <div class="time-block">
     <div class="time-header"><span class="time-badge">10:35 — 10:50</span><span class="time-title">Manuseio Básico e Panes</span></div>
     <div class="time-body">
-      <p><strong>Manuseio:</strong></p>
-      <div class="item">Inserção da munição no carregador</div>
-      <div class="item">Inserção do carregador na arma</div>
-      <div class="item">Comandos: Carregar → Alimentar</div>
-      <p style="margin-top:14px;"><strong>Panes:</strong></p>
-      <div class="item">Pane de nega</div>
-      <div class="item">Pane de chaminé</div>
-      <div class="item">Pane de dupla alimentação</div>
-      <div class="item">Pane de extração</div>
-      <div class="item">Solução básica das panes</div>
-      <div class="item">Desmontagem de 1º escalão</div>
+      <p><strong>Instrutor responsável:</strong> Flávio apresenta manuseio e panes. Demonstração com arma descarregada.</p>
+
+      <p style="margin-top:8px;"><strong>Manuseio:</strong></p>
+      <div class="item">Inserção da munição no carregador — pressionando a mola para baixo e empurrando o cartucho para trás</div>
+      <div class="item">Inserção do carregador na arma — empurrar até ouvir o "click" e puxar para confirmar encaixe</div>
+      <div class="item">Comando <strong>"CARREGAR"</strong>: inserir o carregador, aguardar próximo comando</div>
+      <div class="item">Comando <strong>"ALIMENTAR"</strong>: puxar o ferrolho totalmente e SOLTAR (não acompanhar com a mão)</div>
+
+      <p style="margin-top:14px;"><strong>Panes (incidentes de tiro):</strong></p>
+      <div class="item"><strong>Nega:</strong> aperta o gatilho e não sai tiro — aguardar 30s, puxar ferrolho, ejetar o cartucho falho</div>
+      <div class="item"><strong>Chaminé:</strong> estojo preso de pé na janela — bater na base do carregador, puxar ferrolho e soltar</div>
+      <div class="item"><strong>Dupla alimentação:</strong> duas munições tentando entrar na câmara — travar ferrolho, retirar carregador, puxar ferrolho 2-3x</div>
+      <div class="item"><strong>Falha de extração:</strong> estojo não sai da câmara — retirar carregador, puxar com força; se não sair, chamar instrutor</div>
+      <div class="item">Solução básica de cada pane — sempre com cano apontado para o alvo</div>
+      <div class="item">Desmontagem de 1º escalão (apenas demonstração) — para alunos saberem que existe</div>
     </div>
-    <div class="info-box"><strong>Reforçar:</strong> "Pane não significa defeito grave. O importante é manter a calma e seguir procedimento."</div>
+    <div class="info-box"><strong>Reforçar (Flávio):</strong> "Pane não significa defeito grave nem que vocês fizeram algo errado. É normal acontecer. O importante é manter a calma, manter o cano apontado para o alvo, e seguir o procedimento. Nunca vire a arma para olhar dentro."</div>
+    <div class="danger-box"><strong>⚠️ EM CASO DE PANE:</strong> Mantenha a arma apontada para o alvo. Dedo fora do gatilho. Chame o instrutor antes de qualquer ação se tiver dúvida.</div>
   </div>
 
   <div class="time-block">
     <div class="time-header"><span class="time-badge">10:50 — 11:05</span><span class="time-title">Revisão Geral</span></div>
     <div class="time-body">
-      <div class="item">Revisão rápida de toda teoria</div>
-      <div class="item">Retirada de dúvidas</div>
-      <div class="item">Reforço das regras de segurança</div>
-      <div class="item">Explicação da dinâmica prática</div>
+      <p><strong>Conduzido pelos 3 instrutores em conjunto.</strong></p>
+      <div class="item">Revisão rápida de toda teoria (regras, partes da arma, fundamentos, panes)</div>
+      <div class="item">Perguntas dos instrutores aos alunos para verificar entendimento</div>
+      <div class="item">Retirada de dúvidas — todos têm liberdade de perguntar</div>
+      <div class="item">Reforço das 8 regras de segurança (sempre)</div>
+      <div class="item">Explicação da dinâmica prática: 5 alunos por grupo, 1 atira por vez, ordem de tiro</div>
+      <div class="item">Distribuição das armas e munições por grupo (ainda sem disparo)</div>
     </div>
-    <div class="green-box"><strong>Objetivo:</strong> Garantir que todos os alunos estejam seguros antes de pegar no armamento.</div>
+    <div class="info-box"><strong>Fala (Ricardo):</strong> "Agora começa o momento mais importante. Vocês vão pegar uma arma de verdade pela primeira vez. Respira fundo. Confia no seu instrutor. Não tem por que ter pressa."</div>
+    <div class="green-box"><strong>Objetivo:</strong> Garantir que todos os alunos estejam mentalmente preparados e seguros antes de pegar no armamento.</div>
   </div>
 
   <div class="time-block">
     <div class="time-header"><span class="time-badge">11:05 — 11:45</span><span class="time-title">Prática SEM Disparo</span></div>
     <div class="time-body">
-      <p><strong>Separação em 3 grupos de 5 alunos. Cada grupo com 1 instrutor.</strong></p>
-      <div class="danger-box"><strong>⚠️ NÃO HAVERÁ DISPAROS NESTA ETAPA.</strong></div>
-      <p><strong>Dinâmica:</strong> 1 aluno por vez. Os outros 4 observam. Todos repetirão o procedimento.</p>
-      <p style="margin-top:10px;"><strong>Cada aluno realizará:</strong></p>
-      <div class="item">Desmontagem e montagem</div>
-      <div class="item">Municiamento do carregador</div>
-      <div class="item">Inserção do carregador</div>
-      <div class="item">Alimentação da arma</div>
-      <div class="item">Simulação de panes</div>
-      <div class="item">Correção de postura</div>
-      <div class="item">Correção de segurança</div>
+      <p><strong>Separação definitiva em 3 grupos de 5 alunos:</strong></p>
+      <div class="item">🎯 <strong>Grupo 1:</strong> Ricardo Taira + auxiliar Sávio</div>
+      <div class="item">🎯 <strong>Grupo 2:</strong> Flávio Barretto + auxiliar Fábio</div>
+      <div class="item">🎯 <strong>Grupo 3:</strong> Judson Almeida + auxiliar Adilson</div>
+
+      <div class="danger-box"><strong>⚠️ NÃO HAVERÁ DISPAROS NESTA ETAPA.</strong> Munição manuseada apenas para encaixe no carregador.</div>
+
+      <p><strong>Dinâmica:</strong> 1 aluno por vez na bancada. Os outros 4 do grupo observam e aprendem com os erros do colega. Todos repetirão o procedimento na sequência.</p>
+
+      <p style="margin-top:10px;"><strong>Cada aluno realizará (com supervisão do instrutor):</strong></p>
+      <div class="item">Pegar a arma da bancada com segurança (cano para o alvo, dedo fora do gatilho)</div>
+      <div class="item">Verificação visual e tátil da câmara</div>
+      <div class="item">Desmontagem e montagem básica (sob supervisão)</div>
+      <div class="item">Municiamento do carregador — 5 munições</div>
+      <div class="item">Inserção do carregador na arma</div>
+      <div class="item">Alimentação da arma (puxar ferrolho e soltar)</div>
+      <div class="item">Simulação dos comandos: "Pista Quente", "Pista Fria", "Cessar Fogo"</div>
+      <div class="item">Simulação de panes (com cartuchos vazios/dummies)</div>
+      <div class="item">Correção de postura (Isósceles ou Weaver)</div>
+      <div class="item">Correção da empunhadura e visada</div>
+      <div class="item">Correção contínua de segurança (dedo, cano, posicionamento)</div>
     </div>
-    <div class="green-box"><strong>Objetivo:</strong> Criar segurança operacional antes do disparo real. Troca de aluno somente após TODOS finalizarem.</div>
+    <div class="info-box"><strong>Fala do instrutor para cada aluno (modelo):</strong> "Beleza, agora você. Cano para o alvo, dedo fora do gatilho. Pega firme. Calma, sem pressa. Você está aprendendo, não competindo."</div>
+    <div class="green-box"><strong>Objetivo:</strong> Criar segurança operacional antes do disparo real. Aluno só passa para próxima fase se tiver feito todos os procedimentos corretamente. Troca de aluno somente após TODOS finalizarem o ciclo.</div>
   </div>
 
   <div class="time-block">
     <div class="time-header"><span class="time-badge">11:45 — 13:15</span><span class="time-title">Disparos Práticos</span></div>
     <div class="time-body">
-      <p><strong>INÍCIO DOS DISPAROS REAIS</strong></p>
-      <p style="margin-top:10px;"><strong>Primeiros 10 disparos:</strong></p>
-      <div class="item"><strong>5 disparos livres</strong> — para o aluno conhecer o comportamento da arma naturalmente</div>
-      <div class="item"><strong>5 disparos com correção</strong> — postura, empunhadura, gatilho, visada, controle do recuo</div>
-      <p style="margin-top:14px;"><strong>Alvos:</strong></p>
-      <div class="item">Inicialmente será utilizada apenas obreia</div>
-      <div class="item">Não haverá troca completa do alvo nos primeiros disparos</div>
-      <p style="margin-top:14px;"><strong>Últimos 10 disparos:</strong></p>
-      <div class="item">Cada aluno receberá alvo individual identificado com nome</div>
-      <div class="item">Assinado pelos instrutores</div>
-      <div class="item">O aluno poderá levar o alvo para casa</div>
-      <p style="margin-top:14px;"><strong>Durante toda a prática:</strong></p>
-      <div class="item">Controle constante da linha</div>
-      <div class="item">Segurança máxima</div>
-      <div class="item">Correção individual</div>
-      <div class="item">Auxílio dos assistentes</div>
+      <p><strong>🔥 INÍCIO DOS DISPAROS REAIS — 50 tiros de 9mm por aluno</strong></p>
+
+      <div class="info-box"><strong>Briefing antes do primeiro tiro (Ricardo):</strong> "Galera, agora é de verdade. Lembra de tudo que ensinamos: postura, empunhadura, mira na massa, gatilho suave. Respira. Não tem pressa. O primeiro tiro é só para você sentir como é."</div>
+
+      <p style="margin-top:14px;"><strong>FASE 1 — Primeiros 10 disparos (obreia compartilhada):</strong></p>
+      <div class="item"><strong>5 disparos livres</strong> — aluno conhece o comportamento da arma naturalmente, sem correções, para criar familiaridade</div>
+      <div class="item"><strong>5 disparos com correção contínua</strong> do instrutor — postura, empunhadura, gatilho, visada, controle do recuo</div>
+      <div class="item">Não haverá troca de alvo nesta fase — todos atiram na mesma obreia</div>
+
+      <p style="margin-top:14px;"><strong>FASE 2 — Tiros intermediários (30 disparos):</strong></p>
+      <div class="item">Aluno aplica os fundamentos aprendidos com mais autonomia</div>
+      <div class="item">Instrutor corrige individualmente quando necessário</div>
+      <div class="item">Foco em consistência e agrupamento</div>
+
+      <p style="margin-top:14px;"><strong>FASE 3 — Últimos 10 disparos (alvo individual):</strong></p>
+      <div class="item">Cada aluno receberá alvo individual identificado com o seu nome</div>
+      <div class="item">Aluno executa com o que aprendeu, demonstrando evolução</div>
+      <div class="item">Instrutor analisa o agrupamento e dá feedback individual</div>
+      <div class="item">Alvo assinado pelos 3 instrutores ao final</div>
+      <div class="item">🎁 O aluno poderá levar o alvo para casa como recordação</div>
+
+      <p style="margin-top:14px;"><strong>Durante toda a prática (responsabilidade da equipe):</strong></p>
+      <div class="item">Controle constante da linha de tiro (cano sempre para o alvo)</div>
+      <div class="item">Segurança máxima — atenção redobrada em alunos novos</div>
+      <div class="item">Correção individual e técnica para cada aluno</div>
+      <div class="item">Auxiliares apoiando com munição, troca de alvos e organização</div>
+      <div class="item">Hidratação dos alunos entre rodadas (calor)</div>
     </div>
+    <div class="info-box"><strong>Fala recorrente (qualquer instrutor):</strong> "Calma. Respira. Mira na massa. Gatilho suave. Deixa o tiro te surpreender."</div>
+    <div class="danger-box"><strong>⚠️ COMANDO "CESSAR FOGO":</strong> Qualquer instrutor, auxiliar ou ALUNO pode dar esse comando se ver algo errado. Todos param imediatamente. Dedo fora do gatilho.</div>
   </div>
 
   <div class="time-block" style="border-color:var(--gold-dk);background:linear-gradient(135deg,var(--bg3),#1a1500);">
     <div class="time-header"><span class="time-badge" style="background:var(--gold-dk);color:var(--gold-lt);">BÔNUS</span><span class="time-title">Calibre 12 — Cortesia 🎁</span></div>
     <div class="time-body">
-      <div class="item"><strong>3 disparos</strong> de calibre 12 por aluno (cortesia)</div>
-      <div class="item">Explicação rápida antes dos disparos</div>
-      <div class="item">Correção de postura devido ao recuo</div>
+      <p><strong>Instrutor responsável:</strong> Judson conduz a fase da espingarda (experiência em armas longas).</p>
+      <div class="item"><strong>3 disparos</strong> de calibre 12 por aluno — uma cortesia do nosso curso</div>
+      <div class="item">Explicação rápida antes dos disparos: como segurar, encostar no ombro firmemente, postura</div>
+      <div class="item">Demonstração do instrutor primeiro — alunos veem o recuo e o som</div>
+      <div class="item">Cada aluno atira com supervisão direta de pelo menos 2 instrutores ao lado</div>
+      <div class="item">Correção de postura devido ao recuo (que é bem maior que a pistola)</div>
+      <div class="item">Foto do aluno com a espingarda após o último tiro (se desejar)</div>
     </div>
-    <div class="info-box"><strong>Fala importante:</strong> "A espingarda possui mais recuo. O segredo não é força, é postura e firmeza."</div>
+    <div class="info-box"><strong>Fala importante (Judson):</strong> "A espingarda possui muito mais recuo que a pistola. O segredo não é força — é postura e firmeza. Encosta a coronha firme no ombro, joelho levemente dobrado, corpo inclinado para frente. O recuo vai vir, mas você está pronto para ele."</div>
+    <div class="info-box"><strong>Antes do primeiro tiro do aluno:</strong> "Respira. Encosta firme no ombro. Olha pela mira. Aperta o gatilho com calma. O recuo é normal, deixa acontecer."</div>
+    <div class="green-box"><strong>🎁 Cortesia da equipe:</strong> A espingarda calibre 12 é um diferencial do nosso curso. Outros cursos não oferecem essa experiência no básico. Aproveitem.</div>
   </div>
 
   <div class="time-block">
     <div class="time-header"><span class="time-badge">13:15 — 13:40</span><span class="time-title">Organização Final e Feedback</span></div>
     <div class="time-body">
-      <div class="item">Recolhimento das cápsulas</div>
-      <div class="item">Organização da pista</div>
-      <div class="item">Feedback geral</div>
-      <div class="item">Retirada de dúvidas</div>
-      <div class="item">Conversa sobre evolução</div>
-      <div class="item">Apresentação do curso intermediário</div>
+      <p><strong>Auxiliares organizam a pista enquanto instrutores conversam com os alunos.</strong></p>
+      <div class="item">Recolhimento das cápsulas pela equipe e pelos alunos (todos ajudam)</div>
+      <div class="item">Organização da pista — armas em segurança, ferrolho aberto, sem munição</div>
+      <div class="item">Alunos sentados em meia-lua para conversa final</div>
+      <div class="item">Feedback geral — cada instrutor fala do desempenho do seu grupo</div>
+      <div class="item">Retirada de dúvidas — momento aberto para qualquer pergunta</div>
+      <div class="item">Conversa sobre evolução individual — pontos fortes e a melhorar</div>
+      <div class="item">Apresentação do próximo nível — Curso Operador de Pistola Intermediário</div>
+      <div class="item">Apresentação de outros cursos: Espingarda, Carabina, Defesa Pessoal</div>
     </div>
-    <div class="green-box"><strong>Objetivo:</strong> Criar continuidade no treinamento do aluno.</div>
+    <div class="info-box"><strong>Fala (Flávio):</strong> "Pessoal, parabéns! Vocês entraram aqui hoje sem nenhuma experiência e estão saindo com 50+3 tiros disparados com segurança. Isso é grande coisa. O básico vocês têm. Agora é prática contínua."</div>
+    <div class="info-box"><strong>Convite (Ricardo):</strong> "Quem quiser continuar evoluindo, temos o curso intermediário. Lá a gente trabalha tiros sob estresse, troca de carregador, mudança de alvo. Mas só vai quem realmente curtiu e quer seguir."</div>
+    <div class="green-box"><strong>Objetivo:</strong> Criar continuidade no treinamento do aluno e fortalecer a relação aluno-instrutor.</div>
   </div>
 
   <div class="time-block">
     <div class="time-header"><span class="time-badge">13:40 — 14:00</span><span class="time-title">Encerramento</span></div>
     <div class="time-body">
-      <div class="item">Entrega dos certificados</div>
-      <div class="item">Fotos da turma</div>
-      <div class="item">Fotos individuais</div>
-      <div class="item">Fotos com armamentos</div>
-      <div class="item">Fotos com os alvos</div>
-      <div class="item">Encerramento operacional da equipe</div>
+      <p><strong>Momento de celebração e registro fotográfico.</strong></p>
+      <div class="item">Entrega dos certificados individuais (CERT-OPB-2026-XXXX) — chamada pelo nome</div>
+      <div class="item">Foto da turma completa com os 3 instrutores</div>
+      <div class="item">Fotos individuais de cada aluno com seu certificado</div>
+      <div class="item">Fotos com armamentos (armas descarregadas, com segurança)</div>
+      <div class="item">Fotos com os alvos assinados</div>
+      <div class="item">Solicitação de feedback pós-curso (link/QR Code para avaliação online)</div>
+      <div class="item">Convite para grupo do WhatsApp dos ex-alunos</div>
+      <div class="item">Despedida e abertura para conversas individuais</div>
+      <div class="item">Encerramento operacional: equipe recolhe materiais, confere armas e munições restantes</div>
     </div>
+    <div class="info-box"><strong>Fala de encerramento (Ricardo):</strong> "Pessoal, foi um prazer enorme ter vocês com a gente hoje. Vocês foram exemplares. Levem o conhecimento, levem a responsabilidade, e voltem a treinar sempre. Estamos sempre por aqui."</div>
+    <div class="green-box"><strong>✅ MISSÃO CUMPRIDA:</strong> 15 alunos certificados como Operadores de Pistola Básico, com segurança, qualidade e responsabilidade.</div>
   </div>
 </div>
 
